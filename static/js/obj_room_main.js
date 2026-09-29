@@ -2,17 +2,19 @@
 
 // entry check - only allowed in via the nav ft in theme-switcher.js
 // typing /man or /man.html directly or reloading after your one legit entry redir back to index.html
-var manLegit = false;
-try {
-	manLegit = sessionStorage.getItem('nr-man-legit-entry') === '1';
-} catch (e) {}
+// var manLegit = false;
+// try {
+// 	manLegit = sessionStorage.getItem('nr-man-legit-entry') === '1';
+// } catch (e) {}
 
-if (!manLegit) {
-	window.location.replace('index.html');
-} else {
-	try {
-		sessionStorage.removeItem('nr-man-legit-entry'); // onetime use (heh.. guess you could say oneshot)
-	} catch (e) {}
+// if (!manLegit) {
+// 	window.location.replace('index.html');
+// } else {
+// 	try {
+// 		sessionStorage.removeItem('nr-man-legit-entry'); // onetime use (heh.. guess you could say oneshot)
+// 	} catch (e) {}
+
+// Idk what happened that make the sessin storage detection go away but now ppl have to do domain/man.html instead of going back and forward now.. sucks but eh
 
 	var img = document.getElementById('manImg');
 	var audio = document.getElementById('manAudio');
@@ -91,4 +93,3 @@ if (!manLegit) {
 			interactWithMan();
 		}
 	});
-}
